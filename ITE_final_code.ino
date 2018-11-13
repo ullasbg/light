@@ -23,13 +23,11 @@ int timeset=0;
 int timetry=0;
 long tst=0;
 long tnw=0;
-//char ssid[] = "BGWIFI";  //  Network SSID (name)
-//char pass[] = "bg123456";       // Network password
 const char* host = "esp8266-webupdate";
-char ssid[] = "bg_wifi1";  //  Network SSID (name)
-char pass[] = "924@gambas";       // Network password
+char ssid[] = "xxxx";  //  Network SSID (name)
+char pass[] = "xxxxx";       // Network password
 
-RestClient client = RestClient("52.74.122.123",80);
+RestClient client = RestClient("xxxxxxxx",80);
 
 ESP8266WebServer httpServer(80);
 ESP8266HTTPUpdateServer httpUpdater;
@@ -91,8 +89,8 @@ void loop(){
   }
    
   String response;
-  //String deviceID = "B1010";
-  const char* thistring = "{\"Station_ID\":\"B1023\"}";
+  //String deviceID = "xxxx";
+  const char* thistring = "{\"Station_ID\":\"xxxx\"}";
   Serial.print (thistring);
   response = "";
   int statusCode = client.put("/blulight/getstationstatus.php", thistring, &response);
